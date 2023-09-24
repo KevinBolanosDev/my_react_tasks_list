@@ -1,0 +1,93 @@
+body {
+  background-color: rgba(0, 0, 0, 0.856);
+}
+
+
+      /* App */
+
+.container-main {
+  border: 2px solid white;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
+  padding-left: 50px;
+  background-color: rgba(255, 228, 107, 0.705);
+  width: 60vh;
+  height: 70vh;
+  gap: 2em;
+}
+
+.ctner-clear {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(226, 255, 121, 0.397);
+  width: 312px;
+  height: 30px;
+  align-items: center;
+}
+
+.title-clear {
+  height: 30px;
+  justify-content: space-around;
+  font-size: 1em;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 1px;
+}
+
+.btn-clear {
+  height: 25px;
+  background-color: rgb(255, 213, 25, 0.719);
+}
+
+      /* Header */
+
+.title {
+  padding-left: 35px;
+  color: rgb(0, 0, 0);
+  font-size: 2.3em;
+}
+
+.btn-container {
+  width: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-add {
+  width: 30px;
+  height: 31px;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 213, 25, 0.719);
+}
+
+.input-add {
+  width: 250px;
+  height: 25px;
+  background-color: rgba(161, 161, 161, 0.288);
+}
+
+      /* task */
+
+.task-main {
+  background-color: rgba(226, 255, 121, 0.397);
+  width: 50vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.task-icon {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.5em;
+  color: rgb(0, 0, 0);
+}
+
+
