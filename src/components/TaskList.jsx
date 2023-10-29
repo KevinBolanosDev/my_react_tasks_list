@@ -1,22 +1,29 @@
-import { TaskRow } from "./TaskRow";
-import {  TableContainer, Table, Thead, Tr, Th, Tbody} from "@chakra-ui/react"
+import { useState, useEffect } from 'react';
 
-export const TaskList = ({ tasks, changeState }) => {
-  return (
-    <TableContainer>
-    <Table>
-      <Thead>
-        <Tr>
-          <Th>Tasks</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        {tasks.map((task) => (
-          <TaskRow task={task} key={task.name} changeState={changeState}
-          />
-        ))}
-      </Tbody>
-    </Table>
-    </TableContainer>
-  );
+const taskList = () => {
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem('tasks')) || []);
+  
+  // almacena los estados de la tarea en el localstorage
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  const createTask = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };
+
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter(task => task.id !== taskId));
+  };
+
+  const updateTask = (taskId, updatedTask) => {
+    setTasks(tasks.map(task =>
+      task.id === taskId ? { ...task, ...updatedTask } : task
+    ));
+  };
+
+  return { tasks, createTask, deleteTask, updateTask };
 };
+
+export default taskList;
