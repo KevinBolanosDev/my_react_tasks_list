@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const myFunctionHookList = () => {
   // función de array para guardar las tareas
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
+  const tasksStorage = localStorage.getItem("tasks");
+  const parsedTasks = tasksStorage ? JSON.parse(tasksStorage): [];
+  const [tasks, setTasks] = useState(parsedTasks);
 
   // almacena los estados de las tareas en el localstorage
   useEffect(() => {
