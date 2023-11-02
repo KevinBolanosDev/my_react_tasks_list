@@ -9,7 +9,7 @@ import TasksList from "./components/TaskList";
 import { Alert, AlertIcon } from "@chakra-ui/react";
 import AboutUs from "./components/AboutUs";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '/src/App.css';
 
 function App() {
   // importamos las funciones de MyPersonalHook
@@ -90,7 +90,7 @@ function App() {
   return (
     <ChakraProvider>
       {alert.show && (
-        <Alert status={alert.status} flexDirection="column" width="300px">
+        <Alert status={alert.status} flexDirection="column" width="100%">
     <AlertIcon />
     {alert.message}
   </Alert>
@@ -121,6 +121,7 @@ function App() {
             deleteTask={deleteTask}
             updateTask={updateTask}
             alert={setAlert}
+            className="tasks-list-background"
           /> 
           } />
         <Route path="/about" element={<AboutUs />} />
